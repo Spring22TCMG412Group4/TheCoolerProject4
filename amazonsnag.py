@@ -17,3 +17,11 @@ with open("local_copy.log") as file_in:
                 sixreq = sixreq +1
 print(totreq)
 print(sixreq)
+
+
+DataList =[["Requests last 6 months",sixreq],["Requests overall",totreq]]
+
+print (" Requests from log file sorted ")
+
+for item in DataList:
+    print(":",item[0]," "*(22-len(str(item[0]))),":",item[1]," "*(-len(str(item[1]))))
