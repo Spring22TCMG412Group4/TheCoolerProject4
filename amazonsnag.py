@@ -5,6 +5,7 @@ sixreq = 0
 totreq = 0
 sixdate = datetime.datetime(1995, 4, 11)
 
+Print("Computing...")
 with open("local_copy.log") as file_in:
     for line in file_in:
         logdate  = ""
@@ -15,8 +16,6 @@ with open("local_copy.log") as file_in:
             totreq = totreq + 1
             if formlogdate > sixdate:
                 sixreq = sixreq +1
-print(totreq)
-print(sixreq)
 
 
 DataList =[["Requests last 6 months",sixreq],["Requests overall",totreq]]
