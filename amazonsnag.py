@@ -5,7 +5,7 @@ sixreq = 0
 totreq = 0
 sixdate = datetime.datetime(1995, 4, 11)
 
-Print("Computing...")
+print("Computing...")
 with open("local_copy.log") as file_in:
     for line in file_in:
         logdate  = ""
