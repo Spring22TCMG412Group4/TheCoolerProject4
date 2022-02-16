@@ -1,5 +1,15 @@
 import re
 import datetime
+import os.path
+from urllib.request import urlretrieve
+
+logexists = os.path.exists('local_copy.log')
+URL_PATH = 'https://s3.amazonaws.com/tcmg476/http_access_log'
+LOCAL_FILE = 'local_copy.log'
+
+if not logexists:
+    local_file, headers = urlretrieve(URL_PATH, LOCAL_FILE)
+
 
 sixreq = 0
 totreq = 0
