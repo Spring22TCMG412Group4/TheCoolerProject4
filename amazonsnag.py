@@ -1,11 +1,14 @@
 import re
 import datetime
+import os.path
 from urllib.request import urlretrieve
 
+logexists = os.path.exists('local_copy.log')
 URL_PATH = 'https://s3.amazonaws.com/tcmg476/http_access_log'
 LOCAL_FILE = 'local_copy.log'
 
-local_file, headers = urlretrieve(URL_PATH, LOCAL_FILE)
+if not logexists:
+    local_file, headers = urlretrieve(URL_PATH, LOCAL_FILE)
 
 
 sixreq = 0
@@ -22,8 +25,6 @@ with open("local_copy.log") as file_in:
             totreq = totreq + 1
             if formlogdate > sixdate:
                 sixreq = sixreq +1
-print(totreq)
-print(sixreq)
 
 
 DataList =[["Requests last 6 months",sixreq],["Requests overall",totreq]]
